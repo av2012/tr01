@@ -10,7 +10,7 @@ open canopy
 
 
 
-let baseuri = "http://www.turtletest.com/"
+let baseuri = "https://www.hotfrog.com.au"
 
 type Validation = Valid | Invalid
 

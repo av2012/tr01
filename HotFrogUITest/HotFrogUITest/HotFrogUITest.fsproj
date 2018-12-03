@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="pages\page_registrationStep1.fs" />
-    <Compile Include="canopyExtensions.fs" />
     <Compile Include="common.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="canopyExtensions.fs" />
+    <Compile Include="pages\page_registrationStep1.fs" />
     <Compile Include="tests\registration.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>

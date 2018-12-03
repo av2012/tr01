@@ -12,8 +12,13 @@ open types
 open page_registrationStep1
 
 let all () =
-  //context "application"
+    context "registration tests"
 
+
+  
+
+
+    before (fun _ -> goto uri)
     
-  "Data is set properly" &&& fun _ ->
-    "_address" == "http://www.turtletest.com"
+    "Data is set properly" &&& fun _ ->
+        "_address" == "http://www.turtletest.com"

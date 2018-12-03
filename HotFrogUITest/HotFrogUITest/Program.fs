@@ -25,7 +25,7 @@ let main _ =
   start chrome
   resize (1400, 900)
 
-  //application.all()
+  registration.all()
   
 
   run()
