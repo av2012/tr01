@@ -1,3 +1,4 @@
+module Program
 //these are similar to C# using statements
 open canopy.runner.classic
 open canopy.configuration

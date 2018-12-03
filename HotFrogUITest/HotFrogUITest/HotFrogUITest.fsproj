@@ -14,14 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="pages\page_registrationStep1.fs" />
     <Compile Include="canopyExtensions.fs" />
     <Compile Include="common.fs" />
     <Compile Include="Program.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="tests\" />
-    <Folder Include="pages\" />
+    <Compile Include="tests\registration.fs" />
   </ItemGroup>
 
 </Project>
