@@ -1,6 +1,14 @@
 module common
 
 open canopy
+open canopy.runner.classic
+open canopy.configuration
+open canopy.classic
+open canopy
+
+
+
+
 
 let baseuri = "http://www.turtletest.com/"
 
