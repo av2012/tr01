@@ -29,4 +29,5 @@ let main _ =
   System.Console.ReadKey() |> ignore
   quit()
 
-  canopy.runner.failedCount
+  failedCount
+
