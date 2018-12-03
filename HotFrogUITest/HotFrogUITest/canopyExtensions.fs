@@ -1,32 +1,38 @@
 module canopyExtensions
 
 open canopy
+open canopy.runner.classic
+open canopy.configuration
+open canopy.classic
+open canopy
+
+
+
+
 
 let private _placeholder value = sprintf "[placeholder = '%s']" value
-let placeholder value = _placeholder value |> css
+let placeholder value = _placeholder value
 
 let private _name value = sprintf "[name = '%s']" value
-let name value = _name value |> css
+let name value = _name value
 
 let private _options value = sprintf "select[name = '%s'] option" value
-let options value = _options value |> css
+let options value = _options value
 
 let private _data_qa_name value = sprintf "[data-qa-name = '%s']" value
-let data_qa_name value = _data_qa_name value |> css
+let data_qa_name value = _data_qa_name value
 
 let findByPlaceholder value f =
   try
     f(OpenQA.Selenium.By.CssSelector(_placeholder value)) |> List.ofSeq
   with | ex -> []
 
-let addFinders () =
-  addFinder findByPlaceholder
+let goto uri = url uri
 
-let goto uri = canopy.core.url uri
 
 let on url =
   let message = sprintf "Validating on page %s" url
-  canopy.core.waitFor2 message (fun _ -> currentUrl().Contains(url))
+  waitFor2 message (fun _ -> currentUrl().Contains(url))
 
 let optionsToInts selector =
   elements selector

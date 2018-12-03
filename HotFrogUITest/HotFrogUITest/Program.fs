@@ -6,6 +6,9 @@ open canopy
 open canopyExtensions
 open types
 
+
+
+
 [<EntryPoint>]
 let main _ =
   configuration.wipSleep <- 0.2
@@ -16,7 +19,7 @@ let main _ =
   configuration.failFast := true
   configuration.chromeDir <- @"C:\work"
 
-  addFinders ()
+  
 
   start chrome
   resize (1400, 900)
