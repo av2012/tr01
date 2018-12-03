@@ -2,7 +2,9 @@
 open canopy.runner.classic
 open canopy.configuration
 open canopy.classic
+open canopy
 
+configuration.chromeDir <- @"C:\work"
 //start an instance of chrome
 start chrome
 
