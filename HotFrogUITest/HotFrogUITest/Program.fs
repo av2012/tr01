@@ -3,39 +3,30 @@ open canopy.runner.classic
 open canopy.configuration
 open canopy.classic
 open canopy
+open canopyExtensions
+open types
 
-configuration.chromeDir <- @"C:\work"
-//start an instance of chrome
-start chrome
+[<EntryPoint>]
+let main _ =
+  configuration.wipSleep <- 0.2
+  configuration.compareTimeout <- 10.0
+  configuration.elementTimeout <- 10.0
+  configuration.pageTimeout <- 10.0
+  configuration.autoPinBrowserRightOnLaunch <- false
+  configuration.failFast := true
+  configuration.chromeDir <- @"C:\work"
 
-//this is how you define a test
-"taking canopy for a spin" &&& fun _ ->
-    //this is an F# function body, it's whitespace enforced
+  addFinders ()
 
-    //go to url
-    url "http://lefthandedgoat.github.io/canopy/testpages/"
+  start chrome
+  resize (1400, 900)
 
-    //assert that the element with an id of 'welcome' has
-    //the text 'Welcome'
-    "#welcome" == "Welcome"
+  //application.all()
+  
 
-    //assert that the element with an id of 'firstName' has the value 'John'
-    "#firstName" == "John"
+  run()
 
-    //change the value of element with
-    //an id of 'firstName' to 'Something Else'
-    "#firstName" << "Something Else"
+  System.Console.ReadKey() |> ignore
+  quit()
 
-    //verify another element's value, click a button,
-    //verify the element is updated
-    "#button_clicked" == "button not clicked"
-    click "#button"
-    "#button_clicked" == "button clicked"
-
-//run all tests
-run()
-
-printfn "press [enter] to exit"
-System.Console.ReadLine() |> ignore
-
-quit()
+  canopy.runner.failedCount

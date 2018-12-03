@@ -14,7 +14,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="canopyExtensions.fs" />
+    <Compile Include="common.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="tests\" />
+    <Folder Include="pages\" />
   </ItemGroup>
 
 </Project>
